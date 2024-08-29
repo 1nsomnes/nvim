@@ -6,3 +6,4 @@ vim.cmd [[colorscheme nightfly]]
 
 require("core.options")
 require("core.keymaps")
+
