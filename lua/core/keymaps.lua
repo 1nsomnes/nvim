@@ -19,4 +19,5 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab 
 
 -- nvim tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")    
+keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")   
+keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>")
