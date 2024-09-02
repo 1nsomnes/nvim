@@ -35,4 +35,7 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
-opt.iskeyword:append("-")
+opt.iskeyword:append("-") 
+
+-- seperate buffers with nothing
+opt.fillchars = { eob = " " }
