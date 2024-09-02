@@ -1,15 +1,19 @@
 return {
-  -- autocomplete stuff 
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
   'hrsh7th/nvim-cmp',
   
-  -- vsnip
-  'hrsh7th/cmp-vsnip',
-  'hrsh7th/vim-vsnip',
+  dependencies = { 
+    -- autocomplete stuff 
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
 
+      -- vsnip
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
+
+  },
+ 
   config = function()
     local cmp = require("cmp")
 
@@ -31,8 +35,19 @@ return {
         { name = 'nvim_lsp' },
       }, {
         { name = "buffer" },
-      })
+      }),
 
+      window = {
+        documentation = {
+			border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"},
+		},
+		completion = {
+			border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"},
+		}
+    },
+      completion = {
+        completeopt = 'menu,menuone,noinsert'
+      }
     })
   end
 }
