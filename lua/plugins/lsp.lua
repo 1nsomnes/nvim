@@ -10,7 +10,7 @@ return {
         after = "mason.nvim",  -- Ensure this runs after mason.nvim is loaded
         config = function()
             require("mason-lspconfig").setup({
-              ensure_installed= { "lua_ls", "pyright" }
+              ensure_installed= { "lua_ls", "pyright", "gopls" }
             })
         end,
     },
@@ -26,6 +26,9 @@ return {
               capabilities=capabilities
             }
             lspconfig.pyright.setup{
+              capabilities=capabilities
+            }
+            lspconfig.gopls.setup{
               capabilities=capabilities
             }
         end,
