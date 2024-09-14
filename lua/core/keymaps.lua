@@ -17,10 +17,15 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true }) -- Mov
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true }) -- Move to the window above
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true }) -- Move to the window on the right
 
+-- Tab Movement
 -- keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>BufferClose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", "<cmd>BufferNext<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>BufferPrevious<CR>") --  go to previous tab 
+
+keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>")
+keymap.set("n", "<leader>tv", "<cmd>ToggleTerm<CR>")
+
 
 -- nvim tree
 keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")   
