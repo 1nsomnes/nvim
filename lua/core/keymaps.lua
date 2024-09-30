@@ -12,10 +12,10 @@ keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & heig
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- Move between windows using Ctrl + h/j/k/l on macOS
-vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true }) -- Move to the window on the left
-vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true }) -- Move to the window below
-vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true }) -- Move to the window above
-vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true }) -- Move to the window on the right
+keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true }) -- Move to the window on the left
+keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true }) -- Move to the window below
+keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true }) -- Move to the window above
+keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true }) -- Move to the window on the right
 
 -- Tab Movement
 -- keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
@@ -32,13 +32,18 @@ keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>")
 
 -- telescope 
-vim.keymap.set('n', '<leader>ff', "<cmd>Telescope find_files<CR>")
-vim.keymap.set('n', '<leader>fg', "<cmd>Telescope live_grep<CR>")
-vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<CR>")
-vim.keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<cr>")
+keymap.set('n', '<leader>ff', "<cmd>Telescope find_files<CR>")
+keymap.set('n', '<leader>fg', "<cmd>Telescope live_grep<CR>")
+keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<CR>")
+keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<cr>")
 
 -- lsp 
-vim.keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>")
+keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>")
+keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+keymap.set('n', '<leader>rr', '<cmd>Telescope lsp_references<CR>')
+keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+
 
 -- terminal
-vim.keymap.set('t', 'jk', '<C-\\><C-n>')
+keymap.set('t', 'jk', '<C-\\><C-n>')
