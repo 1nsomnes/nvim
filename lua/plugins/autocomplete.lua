@@ -8,11 +8,10 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
-
-        -- vsnip
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip',
-
+      
+      -- luasnip
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
     },
    
     config = function()
@@ -22,7 +21,7 @@ return {
         snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-          vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+          require('luasnip').lsp_expand(args.body)
         end,
       },
         mapping = cmp.mapping.preset.insert({
@@ -34,6 +33,7 @@ return {
       }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          { name = 'luasnip'},
         }, {
           { name = "buffer" },
         }),
