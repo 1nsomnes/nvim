@@ -24,7 +24,7 @@ keymap.set("n", "<leader>tn", "<cmd>BufferNext<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>BufferPrevious<CR>") --  go to previous tab 
 
 keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>")
-keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=horizontal<CR>")
+keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>")
 
 
 -- nvim tree
@@ -36,3 +36,9 @@ vim.keymap.set('n', '<leader>ff', "<cmd>Telescope find_files<CR>")
 vim.keymap.set('n', '<leader>fg', "<cmd>Telescope live_grep<CR>")
 vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<CR>")
 vim.keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<cr>")
+
+-- lsp 
+vim.keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>")
+
+-- terminal
+vim.keymap.set('t', 'jk', '<C-\\><C-n>')
