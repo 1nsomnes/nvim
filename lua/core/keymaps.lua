@@ -42,8 +42,13 @@ keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>")
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 keymap.set('n', '<leader>rr', '<cmd>Telescope lsp_references<CR>')
-keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>')
+keymap.set('n', '<leader>af', '<cmd>lua vim.lsp.buf.format({async = true})<CR>')
 
 
 -- terminal
-keymap.set('t', 'jk', '<C-\\><C-n>')
+keymap.set('t', '<ESC>', '<C-\\><C-n>')
+
+-- fancy keybinds
+keymap.set('n', '<leader>tt', "<cmd>TodoTelescope<CR>")
+keymap.set('n', ':', '<cmd>FineCmdline<CR>')
