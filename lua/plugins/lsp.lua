@@ -22,18 +22,26 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             -- Set up your LSP servers here
-            lspconfig.lua_ls.setup{
-              capabilities=capabilities
-            }
-            lspconfig.pyright.setup{
-              capabilities=capabilities
-            }
-            lspconfig.gopls.setup{
-              capabilities=capabilities
-            }
-            lspconfig.ts_ls.setup{
-              capabilities=capabilities
-            }
+            local on_attach = function(client, bufnr)
+              local bufmap = function(mode, lhs, rhs, desc)
+                vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+              end
+
+              bufmap("n", "K", vim.lsp.buf.hover,          "LSP Hover")
+              bufmap("n", "<leader>d", function()
+                vim.diagnostic.open_float(0, { scope = "line", focus = false })
+              end,                                     "Line Diagnostics")
+              bufmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
+              bufmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
+            end
+
+            local servers = { "lua_ls", "pyright", "gopls", "tsserver" }
+            for _, name in ipairs(servers) do
+              lspconfig[name].setup {
+                capabilities = capabilities,
+                on_attach    = on_attach,
+              }
+            end
         end,
     },
     {
