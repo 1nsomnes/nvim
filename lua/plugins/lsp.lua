@@ -27,10 +27,6 @@ return {
                 vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
               end
 
-              bufmap("n", "K", vim.lsp.buf.hover,          "LSP Hover")
-              bufmap("n", "<leader>d", function()
-                vim.diagnostic.open_float(0, { scope = "line", focus = false })
-              end,                                     "Line Diagnostics")
               bufmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
               bufmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
             end
