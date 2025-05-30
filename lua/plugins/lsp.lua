@@ -10,7 +10,7 @@ return {
         after = "mason.nvim",  -- Ensure this runs after mason.nvim is loaded
         config = function()
             require("mason-lspconfig").setup({
-              ensure_installed= { "lua_ls", "pyright", "gopls", "ts_ls" }
+              ensure_installed= { "lua_ls", "pyright", "gopls", "ts_ls", "jsonls" }
             })
         end,
     },
@@ -31,7 +31,7 @@ return {
               bufmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
             end
 
-            local servers = { "lua_ls", "pyright", "gopls", "tsserver" }
+            local servers = { "lua_ls", "pyright", "gopls", "ts_ls", "jsonls" }
             for _, name in ipairs(servers) do
               lspconfig[name].setup {
                 capabilities = capabilities,
