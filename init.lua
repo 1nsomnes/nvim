@@ -5,7 +5,13 @@ vim.g.mapleader = " "
 
 require("lazy").setup("plugins")
 
-vim.cmd [[colorscheme nightfly]]
+require("cyberdream").setup({
+  variant="dark",
+  transparent=true,
+})
+
+
+vim.cmd [[colorscheme cyberdream]]
 
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()

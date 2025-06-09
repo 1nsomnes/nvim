@@ -1,4 +1,5 @@
--- Bootstrap lazy.nvim
+-- Bootstrap lazy.nvim (taken from the github config)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -23,6 +24,6 @@ require("lazy").setup({
     { import = "plugins" }, -- imports plugins from the "plugins" directory
   },
 
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- automatically check for plugin updates, but don't send notifications everytime you open
+  checker = { enabled = true, notify=false },
 })
