@@ -5,12 +5,6 @@ return {
     opts = {},
   },
   {
-    'VonHeikemen/fine-cmdline.nvim',
-    dependencies = {
-      'MunifTanjim/nui.nvim'
-    }
-  },
-  {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
@@ -42,47 +36,4 @@ return {
       }
     end
   },
-  {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      local db = require("dashboard")
-      db.setup({
-        theme = 'doom',
-        config = {
-          header = { --your header
-            "=================     ===============     ===============   ========  ========",
-            "\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
-            "||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
-            "|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-            "||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-            "|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
-            "||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
-            "|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
-            "||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
-            "||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
-            "||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
-            "||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
-            "||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
-            "||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
-            "||   .=='    _-'          '-__\\._-'         '-_./__-'         `' |. /|  |   ||",
-            "||.=='    _-'                                                     `' |  /==.||",
-            "=='    _-'                        N E O V I M                         \\/   `==",
-            "\\   _-'                                                                `-_   /",
-            "`''                                                                      ``'"
-          },
-          center = {
-            { icon = '  ', desc = 'Find File          ', action = 'Telescope find_files' },
-            { icon = '  ', desc = 'Recents            ', action = 'Telescope oldfiles' },
-            { icon = '  ', desc = 'Toggle Tree        ', action = 'NvimTreeToggle' },
-            { icon = '  ', desc = 'Bookmarks          ', action = 'Telescope marks' },
-            { icon = '洛 ', desc = 'New File           ', action = 'DashboardNewFile' },
-            { icon = '  ', desc = 'Last Session       ', action = 'SessionLoad' },
-          },
-          footer = {} --your footer
-        }
-      })
-    end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-  }
 }

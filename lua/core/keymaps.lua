@@ -25,6 +25,7 @@ keymap.set("n", "<leader>tp", "<cmd>BufferPrevious<CR>") --  go to previous tab
 
 keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>")
 keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>")
+keymap.set("n", "<leader>tb", "<cmd>ToggleTerm direction=tab<CR>")
 
 
 -- nvim tree
@@ -56,4 +57,3 @@ keymap.set('t', '<ESC>', '<C-\\><C-n>')
 
 -- fancy keybinds
 keymap.set('n', '<leader>tt', "<cmd>TodoTelescope<CR>")
-keymap.set('n', ':', '<cmd>FineCmdline<CR>')
