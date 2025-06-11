@@ -31,7 +31,7 @@ return {
         bufmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
       end
 
-      local servers = { "lua_ls", "pyright", "gopls", "ts_ls", "jsonls" }
+      local servers = { "lua_ls", "pyright", "gopls", "ts_ls", "jsonls", "dartls"}
       for _, name in ipairs(servers) do
         lspconfig[name].setup {
           capabilities = capabilities,

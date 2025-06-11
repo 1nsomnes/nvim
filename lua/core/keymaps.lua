@@ -39,7 +39,10 @@ keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<CR>")
 keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<cr>")
 
 -- lsp
-keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>")
+--keymap.set('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", {border = "rounded"})
+keymap.set('n', 'K',function() 
+  vim.lsp.buf.hover { border = "rounded"}
+end)
 keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 keymap.set('n', '<leader>rr', '<cmd>Telescope lsp_references<CR>')
