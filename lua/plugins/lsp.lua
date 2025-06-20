@@ -21,6 +21,7 @@ return {
       -- Example of setting up an LSP with mason
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      lspconfig.sourcekit.setup {}
       -- Set up your LSP servers here
       local on_attach = function(client, bufnr)
         local bufmap = function(mode, lhs, rhs, desc)
