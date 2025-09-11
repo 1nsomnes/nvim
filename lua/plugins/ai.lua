@@ -21,8 +21,9 @@ return {
       provider = "claude",
       providers = {
         claude = {
-          endpoint = "https://api.anthropic.com",
+          endpoint = "secret_api",
           model = "claude-sonnet-4-20250514",
+          api_key = os.getenv("ANTHROPIC_API_KEY"),
           timeout = 30000, -- Timeout in milliseconds
           extra_request_body = {
             temperature = 0.75,
